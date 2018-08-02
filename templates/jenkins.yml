@@ -66,6 +66,10 @@ objects:
         containers:
         - capabilities: {}
           env:
+          - name: GITHUB_USER
+            value: ${GITHUB_USER}
+          - name: GITHUB_PASSWORD
+            value: ${GITHUB_PASSWORD}
           - name: OPENSHIFT_ENABLE_OAUTH
             value: ${ENABLE_OAUTH}
           - name: JAVA_GC_OPTS
@@ -221,3 +225,7 @@ parameters:
   displayName: Jenkins Arguments
   name: JENKINS_OPTS
   value: --sessionTimeout=0
+- name: GITHUB_USER
+  description: Username for git credential
+- name: GITHUB_PASSWORD
+  description: Password for git credential
