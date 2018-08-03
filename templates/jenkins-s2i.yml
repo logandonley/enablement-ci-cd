@@ -12,8 +12,8 @@ metadata:
 objects:
 - apiVersion: v1
   stringData:
-    password: "${SOURCE_REPOSITORY_PASSWORD}"
-    username: "${SOURCE_REPOSITORY_USERNAME}"
+    password: "${GIT_PASSWORD}"
+    username: "${GIT_USERNAME}"
   kind: Secret
   metadata:
     name: gitlab-auth
@@ -120,12 +120,12 @@ parameters:
   description: The namespace where the Jenkins builder Image Stream lives
   required: true
   value: openshift
-- name: SOURCE_REPOSITORY_USERNAME
+- name: GIT_USERNAME
   displayName: Git Repo Username
   description: Username to have the builder pod auth against git
   required: true
   value: jenkins
-- name: SOURCE_REPOSITORY_PASSWORD
+- name: GIT_PASSWORD
   displayName: Git Repo Password
   description: Password to have the builder pod auth against git
   required: true
